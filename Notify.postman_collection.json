@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "de26e2b9-6084-4b42-a693-ec2dd88bb65d",
+		"name": "Notify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17022813"
+	},
+	"item": [
+		{
+			"name": "User List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_Url}}/user",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/user",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "547"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"223-jxCdvQFsQmP5AD8e01u2RpGeEeA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Aug 2025 12:18:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User list fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6890a4f8d327a18668f5bba4\",\n            \"name\": \"User1\",\n            \"devices\": [\n                \"device1\",\n                \"device2\"\n            ],\n            \"__v\": 0,\n            \"createdAt\": \"2025-08-04T12:18:00.931Z\",\n            \"updatedAt\": \"2025-08-04T12:18:00.931Z\"\n        },\n        {\n            \"_id\": \"6890a4f8d327a18668f5bba5\",\n            \"name\": \"User2\",\n            \"devices\": [\n                \"device3\",\n                \"device4\"\n            ],\n            \"__v\": 0,\n            \"createdAt\": \"2025-08-04T12:18:00.933Z\",\n            \"updatedAt\": \"2025-08-04T12:18:00.933Z\"\n        },\n        {\n            \"_id\": \"6890a4f8d327a18668f5bba6\",\n            \"name\": \"User3\",\n            \"devices\": [\n                \"device1\"\n            ],\n            \"__v\": 0,\n            \"createdAt\": \"2025-08-04T12:18:00.933Z\",\n            \"updatedAt\": \"2025-08-04T12:18:00.933Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Jhon\",\n    \"device\":\"dev1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base_Url}}/user",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notification List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_Url}}/notification/",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"path": [
+						"notification",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Notification List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/notification/",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"notification",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f8-X2Pwv/qSNehM4Zqu1ddn82IO0u8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Aug 2025 12:24:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Notification list fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6890a66d6356955e6a4e5328\",\n            \"message\": \"Push notification\",\n            \"priority\": \"normal\",\n            \"exipreAt\": null,\n            \"createdAt\": \"2025-08-04T12:24:13.888Z\",\n            \"updatedAt\": \"2025-08-04T12:24:13.888Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Send Notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\":\"all\",\n    \"message\": \"Push notification\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base_Url}}/notification/",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"path": [
+						"notification",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notification details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_Url}}/notification/notification-details/6890a66d6356955e6a4e5328",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"path": [
+						"notification",
+						"notification-details",
+						"6890a66d6356955e6a4e5328"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Notification Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/notification/notification-details/6890a66d6356955e6a4e5328",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"notification",
+								"notification-details",
+								"6890a66d6356955e6a4e5328"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f8-X2Pwv/qSNehM4Zqu1ddn82IO0u8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Aug 2025 12:25:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Notification list fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6890a66d6356955e6a4e5328\",\n            \"message\": \"Push notification\",\n            \"priority\": \"normal\",\n            \"exipreAt\": null,\n            \"createdAt\": \"2025-08-04T12:24:13.888Z\",\n            \"updatedAt\": \"2025-08-04T12:24:13.888Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "User Notifications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_Url}}/notification/user/6890a4f8d327a18668f5bba4",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"path": [
+						"notification",
+						"user",
+						"6890a4f8d327a18668f5bba4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User Notification List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/notification/user/6890a4f8d327a18668f5bba4",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"notification",
+								"user",
+								"6890a4f8d327a18668f5bba4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "305"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"131-IxDQ1dxUSvstLXRKMNLO/yUkSlk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Aug 2025 12:38:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User notification list fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6890a66d6356955e6a4e532b\",\n            \"status\": \"read\",\n            \"createdAt\": \"2025-08-04T12:24:13.954Z\",\n            \"updatedAt\": \"2025-08-04T12:37:53.731Z\",\n            \"notificationId\": \"6890a66d6356955e6a4e5328\",\n            \"message\": \"Push notification\",\n            \"priority\": \"normal\",\n            \"exipreAt\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Notification Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"6890a4f8d327a18668f5bba4\",\n    \"notificationId\": \"6890a66d6356955e6a4e5328\",\n    \"deviceId\": \"device1\"\n    // \"readTime\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base_Url}}/notification/push-notification/",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"path": [
+						"notification",
+						"push-notification",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Notification Status",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"6890a4f8d327a18668f5bba4\",\n    \"notificationId\": \"6890a66d6356955e6a4e5328\",\n    \"deviceId\": \"device1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_Url}}/notification/push-notification/",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"notification",
+								"push-notification",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "390"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"186-xGfbydoAkBgffOErNKoUCVMTIP4\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Aug 2025 13:40:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"message\": \"Notification status updated successfully\",\n    \"data\": {\n        \"_id\": \"6890a66d6356955e6a4e532b\",\n        \"userId\": \"6890a4f8d327a18668f5bba4\",\n        \"notificationId\": \"6890a66d6356955e6a4e5328\",\n        \"status\": \"read\",\n        \"__v\": 1,\n        \"createdAt\": \"2025-08-04T12:24:13.954Z\",\n        \"updatedAt\": \"2025-08-04T13:40:28.744Z\",\n        \"readByDevices\": [\n            {\n                \"deviceId\": \"device1\",\n                \"readTime\": \"2025-08-04T13:40:28.734Z\",\n                \"_id\": \"6890b83d90fd743b0974a3e5\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Base_Url",
+			"value": "http://localhost:3000/",
+			"type": "string"
+		}
+	]
+}
